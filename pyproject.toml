@@ -12,6 +12,9 @@ dependencies = [
     "textual>=0.80",
 ]
 
+[project.scripts]
+cytoblast-proto = "cytoblast_proto.app:main"
+
 [dependency-groups]
 dev = [
     "pytest>=8.0",
