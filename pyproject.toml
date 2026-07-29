@@ -1,0 +1,40 @@
+[project]
+name = "cytoblast-proto"
+# Placeholder. Releases are cut per ROADMAP phase into VERSION + RELEASE.txt by
+# /release-version; nothing here is bumped by hand.
+version = "0.0.0"
+description = "CytoblastOS v0 prototype — disposable by declaration (ROADMAP §v0)"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+dependencies = [
+    "anthropic>=0.40",
+    "python-dotenv>=1.0",
+    "textual>=0.80",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# All v0 code lives under prototype/ so the v0.4 freeze is a physical boundary:
+# v1 creates core/, adapters/, modules/ beside it and copies nothing forward.
+[tool.hatch.build.targets.wheel]
+packages = ["prototype/cytoblast_proto"]
+
+[tool.ruff]
+line-length = 100
+src = ["prototype"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["prototype/tests"]
+asyncio_mode = "auto"

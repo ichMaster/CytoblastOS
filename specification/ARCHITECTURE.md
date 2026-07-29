@@ -165,6 +165,7 @@ Everything durable lives in the shared store as markdown with frontmatter; only 
 ## Stack and repository layout
 
 ```
+/prototype      # v0 only: the disposable vertical slice, frozen and left behind at v0.4
 /core           # orchestrator, routing, shared context, model seam (cheap/strong tiers)
 /adapters       # OS abstraction: contract + macos/ (v1), linux/ (v7), contract test suite
 /modules        # monitoring/ (v2), search/ (v3), management/ (v5), config/ (v6)
@@ -177,6 +178,8 @@ Everything durable lives in the shared store as markdown with frontmatter; only 
 ```
 
 Python for the core, with the same toolchain as the rest of this author's projects (`uv`, `ruff`, `pytest`) — consistent with the repository's Python `.gitignore`. The shell (v8) adds a JS/TS toolchain for Tauri or Electron; nothing before it needs one. Each directory is created as its version begins.
+
+`/prototype` is the exception to that last sentence, and to the layout above: **all of v0 lives inside it**, so the freeze at the end of v0.4 is a physical boundary rather than an intention. v1 creates `/core`, `/adapters`, `/modules` and the rest beside it and copies nothing forward — only scenarios and findings cross over. The prototype's terminal chat is built on Textual, which is disposable with the rest of it; the v8 shell is unrelated.
 
 ## Testing and CI
 

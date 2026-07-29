@@ -1,0 +1,38 @@
+name: CI
+
+# ARCHITECTURE §Testing and CI: lint and the full suite on every push; main
+# stays green to merge.
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    # macOS through v6 — the readings in this prototype are macOS-specific
+    # (ARCHITECTURE §OS abstraction layer). Linux arrives with v7.
+    runs-on: macos-latest
+
+    env:
+      # A dummy key, so configuration resolves. The model is mocked in every
+      # test: CI makes no paid call and mutates nothing.
+      ANTHROPIC_API_KEY: ci-not-a-real-key
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Lint
+        run: uv run ruff check
+
+      - name: Format check
+        run: uv run ruff format --check
+
+      - name: Tests
+        run: uv run pytest

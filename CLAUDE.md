@@ -4,9 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current state
 
-Pre-implementation. The repository contains the specification set in [specification/](specification/), the build-workflow skills in [.claude/skills/](.claude/skills/), a stock Python `.gitignore`, and the MIT license. There is no source code, no dependency manifest, and therefore **no build, lint, or test commands yet** — do not assume any exist. When the first code lands (v0.1), add the real commands to this file.
+In v0 — the prototype. **All v0 code lives under [prototype/](prototype/)** (package `cytoblast_proto`, tests in `prototype/tests/`), so the freeze at the end of v0.4 is a physical boundary: v1 creates `core/`, `adapters/`, `modules/` beside it and copies nothing forward. Treat everything in `prototype/` as disposable by declaration (ROADMAP §v0) — do not build abstractions there for v1 to inherit.
 
-The `.gitignore` is GitHub's Python template, which is the only signal about the intended backend stack. The spec names Tauri or Electron for the shell webview, so a second (JS/TS) toolchain is expected later; neither is set up.
+## Commands
+
+```bash
+uv sync                    # install (Python >=3.12; toolchain is uv + ruff + pytest)
+uv run pytest              # full suite — tests live in prototype/tests/
+uv run ruff check          # lint
+uv run ruff format         # format (CI runs `ruff format --check`)
+```
+
+CI runs lint, the format check, and the full suite on every push (macOS runner — the readings are macOS-specific until v7). Configuration comes from `.env`, which is gitignored; copy `.env.example` and set `ANTHROPIC_API_KEY`. `CYTO_MODEL_READ` selects the read-path model and defaults to the cheap fast tier.
+
+**Tests never make a paid model call and never mutate the real system.** The model is mocked and the readings are stubbed or driven from committed fixtures; that holds for every version, not just this one (ARCHITECTURE §Testing and CI).
+
+The spec names Tauri or Electron for the v8 shell webview, so a second (JS/TS) toolchain is expected eventually; it is not set up. The prototype's terminal chat is Textual, and is disposable with the rest of v0.
 
 ## Source of truth
 
