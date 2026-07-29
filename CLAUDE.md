@@ -10,12 +10,9 @@ The `.gitignore` is GitHub's Python template, which is the only signal about the
 
 ## Source of truth
 
-Two layers, in two languages:
+[specification/](specification/) is the spec set, in **English**, modeled on the lumi project's format: [VISION.md](specification/VISION.md) (one sentence, what/for whom, principles, non-goals, glossary), [ARCHITECTURE.md](specification/ARCHITECTURE.md) (components, contracts, data model, stack, testing), [ROADMAP.md](specification/ROADMAP.md) (versions, phases with Goal/Tasks/DoD/Tests). These three are authoritative — design against them, and keep them in English.
 
-- [specification/ukr/agent-os-v1-functionality.md](specification/ukr/agent-os-v1-functionality.md) — the origin design spec, in **Ukrainian**. Everything else derives from it; when it and a derived doc disagree, it wins unless the derived doc explicitly supersedes it.
-- [specification/](specification/) — the working spec set, in **English**, modeled on the lumi project's format: [VISION.md](specification/VISION.md) (one sentence, what/for whom, principles, non-goals, glossary), [ARCHITECTURE.md](specification/ARCHITECTURE.md) (components, contracts, data model, stack, testing), [ROADMAP.md](specification/ROADMAP.md) (versions, phases with Goal/Tasks/DoD/Tests).
-
-Match the language of whichever layer you are editing. Read the relevant one before designing anything — the sections below are a map, not a replacement.
+Read the relevant one before designing anything; the sections below are a map, not a replacement.
 
 **Versioning.** `vA.B` → semver `A.B.0`; `C` is a post-release fix on that phase. Releases are cut per phase into `VERSION` + `RELEASE.txt` (newest first). Never bump the version without explicit confirmation.
 
