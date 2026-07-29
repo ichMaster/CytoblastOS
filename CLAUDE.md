@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current state
 
-Pre-implementation. The repository contains only [agent-os-v1-functionality.md](agent-os-v1-functionality.md) (the v1 design spec), a stock Python `.gitignore`, and the MIT license. There is no source code, no dependency manifest, and therefore **no build, lint, or test commands yet** — do not assume any exist. When the first code lands, add the real commands to this file.
+Pre-implementation. The repository contains the specification set in [specification/](specification/), the build-workflow skills in [.claude/skills/](.claude/skills/), a stock Python `.gitignore`, and the MIT license. There is no source code, no dependency manifest, and therefore **no build, lint, or test commands yet** — do not assume any exist. When the first code lands (v0.1), add the real commands to this file.
 
 The `.gitignore` is GitHub's Python template, which is the only signal about the intended backend stack. The spec names Tauri or Electron for the shell webview, so a second (JS/TS) toolchain is expected later; neither is set up.
 
@@ -12,7 +12,7 @@ The `.gitignore` is GitHub's Python template, which is the only signal about the
 
 Two layers, in two languages:
 
-- [agent-os-v1-functionality.md](agent-os-v1-functionality.md) — the origin design spec, in **Ukrainian**. Everything else derives from it; when it and a derived doc disagree, it wins unless the derived doc explicitly supersedes it.
+- [specification/ukr/agent-os-v1-functionality.md](specification/ukr/agent-os-v1-functionality.md) — the origin design spec, in **Ukrainian**. Everything else derives from it; when it and a derived doc disagree, it wins unless the derived doc explicitly supersedes it.
 - [specification/](specification/) — the working spec set, in **English**, modeled on the lumi project's format: [VISION.md](specification/VISION.md) (one sentence, what/for whom, principles, non-goals, glossary), [ARCHITECTURE.md](specification/ARCHITECTURE.md) (components, contracts, data model, stack, testing), [ROADMAP.md](specification/ROADMAP.md) (versions, phases with Goal/Tasks/DoD/Tests).
 
 Match the language of whichever layer you are editing. Read the relevant one before designing anything — the sections below are a map, not a replacement.
