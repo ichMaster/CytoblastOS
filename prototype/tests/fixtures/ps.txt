@@ -1,0 +1,14 @@
+  PID  %CPU %MEM COMM
+  572  99.6  8.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd
+44881  29.7  0.3 /Applications/Google Chrome 2.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/149.0.7827.115/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper
+ 4892  29.0  0.6 /Applications/Google Chrome 2.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/149.0.7827.115/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)
+17631  24.8  0.6 /Users/alice/.vscode/extensions/anthropic.claude-code-2.1.220-darwin-arm64/resources/native-binary/claude
+  643  23.2  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 2191  19.3  0.7 /Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome
+  136   0.0  0.1 /Applications/Google Chrome 2.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/149.0.7827.115/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)
+ 2823   0.0  0.1 /Applications/Google Chrome 2.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/149.0.7827.115/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)
+    1   0.7  0.0 /sbin/launchd
+  327   0.0  0.1 /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)
+  237   0.0  0.0 /usr/libexec/searchpartyuseragent
+  568   0.7  0.0 /usr/libexec/logd
+  576   0.0  0.0 /usr/sbin/systemstats

@@ -1,0 +1,6 @@
+alice console      Jun 19 14:15 
+alice ttys001      Jun 19 20:49 
+alice ttys004      Jun 19 17:13 
+alice ttys005      Jun 19 17:19 
+alice ttys006      Jul 15 11:00 
+alice ttys007      Jun 19 17:19 
